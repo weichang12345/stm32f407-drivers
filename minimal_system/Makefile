@@ -24,7 +24,7 @@ flash: main.bin
 	st-flash write main.bin 0x8000000
 
 debug: main.elf
-	arm-none-eabi-gdb main.elf
+	arm-none-eabi-gdb
 
 clean:
 	rm -f *.o *.elf *.bin *.map
