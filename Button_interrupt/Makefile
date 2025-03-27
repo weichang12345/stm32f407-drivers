@@ -8,7 +8,7 @@ CFLAGS=-mcpu=cortex-m4 \
 LDFLAGS=-T ./startup.ld -nostdlib -Wl,-Map=output.map
 
 # Include header files
-CFLAGS+=-I./inc
+CFLAGS+=-I./drivers/inc
 CFLAGS+=-I./Cortex-M4/inc
 
 # Startup file
@@ -17,17 +17,17 @@ STARTUP_OBJ=./startup.o
 
 # Add driver files
 SRC=./main.c ./interrupt.c
-SRC+=./src/gpio.c \
-	 ./src/rcc.c \
-	 ./src/syscfg.c \
-	 ./src/exti.c
+SRC+=./drivers/src/gpio.c \
+	 ./drivers/src/rcc.c \
+	 ./drivers/src/syscfg.c \
+	 ./drivers/src/exti.c
 
 # Add core peripherals
 SRC+=./Cortex-M4/src/nvic.c
 
 # Modify object files path
 OBJ_FILES:=$(SRC:.c=.o)
-OBJ_FILES:=$(patsubst ./src/%, %, $(OBJ_FILES))
+OBJ_FILES:=$(patsubst ./drivers/src/%, %, $(OBJ_FILES))
 OBJ_FILES:=$(patsubst ./Cortex-M4/src/%, %, $(OBJ_FILES))
 
 EXECUTABLE=main.elf

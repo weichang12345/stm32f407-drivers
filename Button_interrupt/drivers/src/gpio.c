@@ -67,21 +67,6 @@ void GPIO_Init(GPIO_InitHandle_t *handle)
 
 }
 
-/* Enable the interrupt in NVIC 3333333333 */
-// void NVIC_IRQ_Enable(GPIO_InitHandle_t *handle) // ***the argument should be changed***
-// {
-//     IRQn_t IRQn = GPIO_EXTI_to_IRQn(handle);
-//     if(IRQn < 32){
-//         NVIC->ISER[0] |= (1 << IRQn);
-//     }else if((32 <= IRQn) && (IRQn < 64)){
-//         NVIC->ISER[1] |= (1 << (IRQn & 0x1F)); // IRQn & 0x1F is equivalent to IRQn % 32
-//     }else if((64 <= IRQn) && (IRQn < 81)){
-//         NVIC->ISER[2] |= (1 << (IRQn & 0x1F)); // IRQn & 0x1F is equivalent to IRQn % 32
-//     }else{
-//         /* Error handler */
-//     }
-// }
-
 /* Set all the GPIOx registers to its reset values */
 void GPIO_DeInit(GPIO_RegDef_t *GPIOx)
 {

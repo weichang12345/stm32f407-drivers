@@ -148,6 +148,5 @@ void             GPIO_TogglePin(GPIO_RegDef_t *GPIOx, GPIO_PIN_t pin);
 /* Alternate function configuration */
 void GPIO_SetAF(GPIO_RegDef_t *GPIOx, GPIO_PIN_t pin, uint32_t af);
 
-// void NVIC_IRQ_Enable(GPIO_InitHandle_t *handle);
 
 # endif // _GPIO_H_
