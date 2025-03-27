@@ -68,4 +68,5 @@ int main(void)
 }
 
 
+        GPIO_Init(&orange_led_handle);
 
